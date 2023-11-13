@@ -41,6 +41,11 @@ class _SignupState extends State<Signup> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Image.asset(
+                  "images/logo.png",
+                  height: 180,
+                  width: 180,
+                ),
                 const Text(
                   "Sign Up",
                   style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
