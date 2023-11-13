@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:quickalert/models/quickalert_type.dart';
 import 'package:quickalert/widgets/quickalert_dialog.dart';
-import 'package:saver/View/login.dart';
 import 'package:saver/user_auth/firebase_auth_services.dart';
+import 'package:saver/view/login.dart';
 import 'package:saver/widget/input_widget.dart';
+
 
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);
