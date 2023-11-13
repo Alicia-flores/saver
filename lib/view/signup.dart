@@ -91,3 +91,58 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
+                  const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("¿Ya tienes una cuenta?"),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Login()),
+                          (route) => false,
+                        );
+                      },
+                      child: const Text(
+                        "Login",
+                        style: TextStyle(
+                          color: Colors.black, // Cambiado a azul
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _signUp() async {
+    String username = _usernameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+    if (user != null) {
+      print("Usuario agregado satisfactoriamente.");
+      Navigator.pushNamed(context, "/login");
+    } else {
+      print("Some error happened");
+      QuickAlert.show(
+        context: context,
+        type: QuickAlertType.error,
+        title: 'Oops...',
+        text: 'Debe completar todos los campos',
+      );
+    }
+  }
+}
