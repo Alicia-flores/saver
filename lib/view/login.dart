@@ -68,3 +68,132 @@ class _LoginState extends State<Login> {
                   hintText: 'Contraseña',
                   isPasswordField: true,
                 ),
+                 const SizedBox(
+                  height: 30,
+                ),
+                GestureDetector(
+                  onTap: _signIn,
+                  child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "¿No tienes una cuenta?",
+                      style: TextStyle(color: Colors.black54),
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Signup()),
+                          (route) => false,
+                        );
+                      },
+                      child: const Text(
+                        "Registrarme",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  mensaje ?? "",
+                  style: const TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+    if (user != null) {
+      print("Login Satisfactorio!!!");
+      Navigator.pushReplacementNamed(context, "/home");
+
+      QuickAlert.show(
+        context: context,
+        type: QuickAlertType.success,
+        text: '¡Inicio de sesión exitoso!',
+      );
+      setState(() {
+        mensaje = "";
+      });
+    } else {
+      setState(() {
+        mensaje = "No se encontró el usuario especificado";
+      });
+    }
+  }
+
+  Widget _InputCustomized(
+    TextEditingController? controller,
+    bool? isPassword,
+    String? hintText,
+    String? labelText,
+    TextInputType? inputType,
+    IconData? icon,
+  ) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.green.withOpacity(.4),
+        borderRadius: BorderRadius.circular(40),
+      ),
+      child: TextFormField(
+        style: const TextStyle(color: Colors.black),
+        controller: controller,
+        keyboardType: inputType,
+        obscureText: isPassword == true ? true : false,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          filled: true,
+          hintText: hintText,
+          hintStyle: const TextStyle(color: Colors.black),
+          suffixIcon: Icon(
+            icon,
+            color: Colors.black,
+          ),
+        ),
+      ),
+    );
+  }
+}
