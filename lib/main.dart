@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:saver/View/login.dart';
+import 'package:saver/View/signup.dart';
 import 'package:saver/firebase_options.dart';
+import 'package:saver/pages/home.dart';
 
 
 /*
@@ -14,7 +17,7 @@ void main() async {
  await Firebase.initializeApp(
  options: DefaultFirebaseOptions.currentPlatform,
  );
- runApp(MyApp());
+ runApp(const MyApp());
  }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -29,12 +32,18 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'PROYECTO SAVER'),
+      initialRoute: "/login",
+      routes:{
+        "/home":(context)=> const Home(),
+        "/login":(context)=> const Login(),
+        "/signup":(context)=> const Signup(),
+      },
+      //home: const MyHomePage(title: 'PROYECTO SAVER'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+/*class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
 
@@ -43,7 +52,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
   void getPrueba() async {
  CollectionReference collectionReference = 
@@ -56,13 +64,8 @@ FirebaseFirestore.instance.collection("tb_prueba");
  }
  }
  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+*/
+/*
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,18 +80,15 @@ FirebaseFirestore.instance.collection("tb_prueba");
             const Text(
               'PROYECTO APP DE DENUNCIAS:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+      /*floatingActionButton: FloatingActionButton(
+        onPressed: (){},
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+       child: const Icon(Icons.add),
+      ),*/ // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
    @override
@@ -104,3 +104,4 @@ FirebaseFirestore.instance.collection("tb_prueba");
  super.dispose();
  }
 }
+*/
