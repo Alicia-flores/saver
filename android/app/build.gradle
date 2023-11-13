@@ -25,8 +25,8 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.sis23.saver"
-    compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    compileSdkVersion 22
+    ndkVersion 32
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
