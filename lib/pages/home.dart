@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:saver/pages/acercade.dart';
 import 'package:saver/pages/configuraciones.dart';
+import 'package:saver/pages/mapa.dart';
 import 'package:saver/pages/perfil.dart';
 
 class Home extends StatelessWidget {
@@ -41,7 +42,7 @@ class MyHomePage extends StatelessWidget {
                 backgroundImage: AssetImage('images/logo.png'),
               ),
               decoration: BoxDecoration(
-                color: Colors.lightBlue,
+                color: Colors.red,
               ),
             ),
             ListTile(
@@ -58,10 +59,10 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                //Navigator.push(
-                 // context,
-                 // MaterialPageRoute(builder: (context) => Mapa()),
-                //);
+                Navigator.push(
+                 context,
+                  MaterialPageRoute(builder: (context) => Mapa()),
+                );
               },
             ),
             Divider(),

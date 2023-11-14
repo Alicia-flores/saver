@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:saver/View/login.dart';
-import 'package:saver/View/signup.dart';
 import 'package:saver/firebase_options.dart';
 import 'package:saver/pages/home.dart';
+import 'package:saver/view/login.dart';
+import 'package:saver/view/signup.dart';
 
 
 /*

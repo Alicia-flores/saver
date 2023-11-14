@@ -21,7 +21,7 @@ class Mapa extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Mapa'),
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.red,
         iconTheme: IconThemeData(color: Colors.black),
       ),
       body: GoogleMapWidget(),
@@ -37,13 +37,11 @@ class GoogleMapWidget extends StatefulWidget {
 class _GoogleMapWidgetState extends State<GoogleMapWidget> {
   late GoogleMapController mapController;
   Location location = Location();
-  LatLng? myLocation; // Almacena la ubicación del dispositivo (puede ser nula)
-
+  LatLng? myLocation; 
   @override
   void initState() {
     super.initState();
     location.onLocationChanged.listen((LocationData currentLocation) {
-      // Actualiza la ubicación del dispositivo cuando cambia
       setState(() {
         myLocation = LatLng(currentLocation.latitude!, currentLocation.longitude!);
       });
@@ -59,8 +57,8 @@ class _GoogleMapWidgetState extends State<GoogleMapWidget> {
             mapController = controller;
           },
           initialCameraPosition: CameraPosition(
-            target: LatLng(13.794185, -88.896530), // Coordenadas de El Salvador
-            zoom: 8.0, // Nivel de zoom deseado
+            target: LatLng(13.794185, -88.896530), 
+            zoom: 8.0, //
           ),
           markers: (myLocation != null)
               ? {
