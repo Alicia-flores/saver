@@ -3,6 +3,7 @@ import 'package:saver/pages/bomberos.dart';
 import 'package:saver/pages/cruzroja.dart';
 //import 'package:saver/pages/bomberos.dart';
 //import 'package:saver/pages/cruzroja.dart';
+import 'package:saver/pages/cruzverde.dart';
 //import 'package:saver/pages/police.dart';
 
 class AsistenciasPage extends StatelessWidget {
@@ -57,9 +58,9 @@ class AsistenciasPage extends StatelessWidget {
     return InkWell(
       onTap: () {
         if (route == 'cruzRoja') {
-          //Navigator.push(context, MaterialPageRoute(builder: (context) => CruzRojaPage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => CruzRojaPage()));
         } else if (route == 'cruzVerde') {
-          // Navegar a la página de Cruz Verde
+         Navigator.push(context, MaterialPageRoute(builder: (context) => CruzVerdePage()));
         } else if (route == 'bomberos') {
          Navigator.push(context, MaterialPageRoute(builder: (context) => BomberosPage()));
         } else if (route == 'proteccionCivil') {
