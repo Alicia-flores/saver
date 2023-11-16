@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:saver/pages/acercade.dart';
 import 'package:saver/pages/asistencia.dart';
 import 'package:saver/pages/configuraciones.dart';
+import 'package:saver/pages/denuncia.dart';
 import 'package:saver/pages/mapa.dart';
 import 'package:saver/pages/perfil.dart';
 
@@ -81,10 +82,10 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                //Navigator.push(
-                //  context,
-                //  MaterialPageRoute(builder: (context) => DenunciasPage()),
-                //);
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DenunciasPage()),
+                );
               },
             ),
             Divider(),
