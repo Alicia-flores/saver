@@ -1,4 +1,17 @@
+// Asegúrate de agregar estas dependencias en tu pubspec.yaml
+// dependencies:
+//   flutter:
+//     sdk: flutter
+//   camera: ^0.10.25
+//   microphone: ^0.10.6
+
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import 'package:saver/pages/audio.dart';
+//import 'package:microphone/microphone.dart';
+
+// Importa la nueva página
+//import 'audio.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,8 +49,8 @@ class CruzRojaPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Container(
-              width: 200, // Ajusta el ancho según tus necesidades
-              height: 200, // Ajusta la altura según tus necesidades
+              width: 200,
+              height: 200,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
@@ -52,7 +65,7 @@ class CruzRojaPage extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
-                  'images/cruzroja.png', // Cambia el nombre de la imagen si es necesario
+                  'images/cruzroja.png',
                   fit: BoxFit.cover,
                 ),
               ),
@@ -60,10 +73,26 @@ class CruzRojaPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Agrega la lógica para mostrar información de Cruz Roja
-                // Puedes navegar a otra pantalla o mostrar un diálogo aquí
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GrabacionDeAudioPage()),
+                );
               },
-              child: Text('Ver información de Cruz Roja'),
+              child: Text('Grabar Audio'),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                      },
+              child: Text('Grabar Video'),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {
+                // Lógica para tomar una foto
+                // Implementa la funcionalidad necesaria
+              },
+              child: Text('Tomar Foto'),
             ),
           ],
         ),
