@@ -56,11 +56,11 @@ class DenunciasPage extends StatelessWidget {
       onTap: () {
         if (route == 'policia') {
          Navigator.push(context, MaterialPageRoute(builder: (context) => PoliciaPage()));
-        } else if (route == 'cruzverde') {
+        } else if (route == 'Fuerza Armada') {
         //Navigator.push(context, MaterialPageRoute(builder: (context) => CruzVerdePage()));
-        } else if (route == 'bomberos') {
+        } else if (route == 'Fiscalia') {
          //Navigator.push(context, MaterialPageRoute(builder: (context) => BomberosPage()));
-        } else if (route == 'proteccionCivil') {
+        } else if (route == 'Procuraduria') {
           // Navegar a la página de Protección Civil
         }
       },
