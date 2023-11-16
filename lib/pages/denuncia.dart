@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:saver/pages/police.dart';
+import 'package:saver/pages/policia.dart';
+
 
 class DenunciasPage extends StatelessWidget {
   @override
@@ -53,8 +54,15 @@ class DenunciasPage extends StatelessWidget {
   ) {
     return InkWell(
       onTap: () {
-        //Navigator.push(context, MaterialPageRoute(builder: (context) => PolicePage()));
-       // Navigator.push(context, MaterialPageRoute(builder: (context) => PolicePage()));
+        if (route == 'policia') {
+         Navigator.push(context, MaterialPageRoute(builder: (context) => PoliciaPage()));
+        } else if (route == 'cruzverde') {
+        //Navigator.push(context, MaterialPageRoute(builder: (context) => CruzVerdePage()));
+        } else if (route == 'bomberos') {
+         //Navigator.push(context, MaterialPageRoute(builder: (context) => BomberosPage()));
+        } else if (route == 'proteccionCivil') {
+          // Navegar a la página de Protección Civil
+        }
       },
       child: Card(
         elevation: 3,
