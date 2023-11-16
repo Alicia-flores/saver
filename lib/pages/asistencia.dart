@@ -59,7 +59,7 @@ class AsistenciasPage extends StatelessWidget {
         if (route == 'cruzRoja') {
          Navigator.push(context, MaterialPageRoute(builder: (context) => CruzRojaPage()));
         } else if (route == 'cruzverde') {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => CruzVerdePage()));
+         Navigator.push(context, MaterialPageRoute(builder: (context) => CruzVerdePage()));
         } else if (route == 'bomberos') {
          Navigator.push(context, MaterialPageRoute(builder: (context) => BomberosPage()));
         } else if (route == 'proteccionCivil') {
