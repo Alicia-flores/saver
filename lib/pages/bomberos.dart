@@ -36,8 +36,8 @@ class BomberosPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Container(
-              width: 200, // Ajusta el ancho según tus necesidades
-              height: 200, // Ajusta la altura según tus necesidades
+              width: 200, 
+              height: 200,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [

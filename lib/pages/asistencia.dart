@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saver/pages/bomberos.dart';
+import 'package:saver/pages/cruzroja.dart';
 //import 'package:saver/pages/bomberos.dart';
 //import 'package:saver/pages/cruzroja.dart';
 //import 'package:saver/pages/police.dart';
@@ -41,7 +42,6 @@ class AsistenciasPage extends StatelessWidget {
               'Protección Civil',
               'proteccionCivil',
             ),
-            // Puedes agregar más imágenes y nombres de instituciones aquí
           ],
         ),
       ),
@@ -57,7 +57,7 @@ class AsistenciasPage extends StatelessWidget {
     return InkWell(
       onTap: () {
         if (route == 'cruzRoja') {
-          //Navigator.push(context, MaterialPageRoute(builder: (context) => CruzPage()));
+          //Navigator.push(context, MaterialPageRoute(builder: (context) => CruzRojaPage()));
         } else if (route == 'cruzVerde') {
           // Navegar a la página de Cruz Verde
         } else if (route == 'bomberos') {
