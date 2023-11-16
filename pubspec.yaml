@@ -50,6 +50,10 @@ dependencies:
   audioplayers: ^5.2.1
   flutter_sound: ^9.2.13
   firebase_storage: ^11.5.1
+
+ 
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
