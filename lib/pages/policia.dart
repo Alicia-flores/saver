@@ -21,21 +21,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PoliciaPage(camera: camera),
+      home: policePage(camera: camera),
     );
   }
 }
 
-class PoliciaPage extends StatefulWidget {
+class policePage extends StatefulWidget {
   final CameraDescription camera;
 
- PoliciaPage({required this.camera});
+ policePage({required this.camera});
 
   @override
-  _PoliciaPageState createState() => _PoliciaPageState();
+  _policePageState createState() => _policePageState();
 }
 
-class _PoliciaPageState extends State<PoliciaPage> {
+class _policePageState extends State<policePage> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
   XFile? _takenPhoto;
