@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:saver/pages/fiscalia.dart';
 import 'package:saver/pages/fuerzaarmada.dart';
 import 'package:saver/pages/policia.dart';
 import 'package:camera/camera.dart';
+import 'package:saver/pages/procuraduria.dart';
 
 
 class DenunciasPage extends StatefulWidget {
@@ -86,17 +88,17 @@ class _DenunciasPageState extends State<DenunciasPage> {
             context,
             MaterialPageRoute(builder: (context) => armadaPage(camera: cameras.first)),
           );
-        } /*else if (route == 'bomberos' && cameras.isNotEmpty) {
+        } else if (route == 'fiscalia' && cameras.isNotEmpty) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => BomberosPage(camera: cameras.first)),
+            MaterialPageRoute(builder: (context) => fiscaliaPage(camera: cameras.first)),
           );
-        } else if (route == 'proteccionCivil' && cameras.isNotEmpty) {
+        } else if (route == 'procuraduria' && cameras.isNotEmpty) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ProteccionPage(camera: cameras.first)),
+            MaterialPageRoute(builder: (context) => procuraduriaPage(camera: cameras.first)),
           );
-        }*/
+        }
       },
       child: Card(
         elevation: 3,
