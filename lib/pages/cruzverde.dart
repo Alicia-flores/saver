@@ -149,24 +149,6 @@ class _CruzVerdePageState extends State<CruzVerdePage> {
                   ),
                 ),
                 SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    _buildColorButton(Colors.red, 'Rojo', () {
-                      // Lógica para el botón Rojo
-                    }),
-                    _buildColorButton(Colors.green, 'Verde', () {
-                      // Lógica para el botón Verde
-                    }),
-                    _buildColorButton(Colors.blue, 'Azul', () {
-                      // Lógica para el botón Azul
-                    }),
-                    _buildColorButton(Colors.orange, 'Naranja', () {
-                      // Lógica para el botón Naranja
-                    }),
-                  ],
-                ),
-                SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     _takePhoto(context);
