@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:saver/pages/fuerzaarmada.dart';
 import 'package:saver/pages/policia.dart';
 import 'package:camera/camera.dart';
 
@@ -80,12 +81,12 @@ class _DenunciasPageState extends State<DenunciasPage> {
             context,
             MaterialPageRoute(builder: (context) => policePage(camera: cameras.first)),
           );
-        } /*else if (route == 'cruzVerde' && cameras.isNotEmpty) {
+        } else if (route == 'armada' && cameras.isNotEmpty) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => CruzVerdePage(camera: cameras.first)),
+            MaterialPageRoute(builder: (context) => armadaPage(camera: cameras.first)),
           );
-        } else if (route == 'bomberos' && cameras.isNotEmpty) {
+        } /*else if (route == 'bomberos' && cameras.isNotEmpty) {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => BomberosPage(camera: cameras.first)),
