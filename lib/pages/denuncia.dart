@@ -54,7 +54,7 @@ class DenunciasPage extends StatelessWidget {
   ) {
     return InkWell(
       onTap: () {
-        if (route == 'policia') {
+        if (route == 'police') {
          Navigator.push(context, MaterialPageRoute(builder: (context) => PoliciaPage()));
         } else if (route == 'Fuerza Armada') {
         //Navigator.push(context, MaterialPageRoute(builder: (context) => CruzVerdePage()));

@@ -52,7 +52,7 @@ class PoliciaPage extends StatelessWidget { // Cambié el nombre de la clase
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.asset(
-                  'images/policia.jpg', // Cambié la imagen a una de policía
+                  'images/policia.png', 
                   fit: BoxFit.cover,
                 ),
               ),
@@ -63,7 +63,7 @@ class PoliciaPage extends StatelessWidget { // Cambié el nombre de la clase
                 // Agrega la lógica para mostrar información de policía
                 // Puedes navegar a otra pantalla o mostrar un diálogo aquí
               },
-              child: Text('Ver información de Policía'), // Cambié el texto del botón
+              child: Text('Ver información de Policía'),
             ),
           ],
         ),
