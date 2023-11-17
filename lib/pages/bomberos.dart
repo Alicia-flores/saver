@@ -226,7 +226,6 @@ class _BomberosPageState extends State<BomberosPage> {
     );
 
     if (result != null) {
-      // Aquí puedes manejar el resultado del video grabado
       print('Video grabado en: $result');
     }
   }

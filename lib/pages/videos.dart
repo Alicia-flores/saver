@@ -54,7 +54,6 @@ class _GrabarVideosPageState extends State<GrabarVideosPage> {
         _video = File(pickedFile.path);
         _videoPlayerController = VideoPlayerController.file(_video)
           ..initialize().then((_) {
-            // Asegúrate de que el video se reproduzca automáticamente
             _videoPlayerController.play();
           });
       });
