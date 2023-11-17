@@ -75,7 +75,7 @@ class _DenunciasPageState extends State<DenunciasPage> {
   ) {
     return InkWell(
       onTap: ()  {
-        if (route == 'policia' && cameras.isNotEmpty) {
+        if (route == 'Policia' && cameras.isNotEmpty) {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => PoliciaPage(camera: cameras.first)),
