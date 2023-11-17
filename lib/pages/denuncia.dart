@@ -29,7 +29,7 @@ class _DenunciasPageState extends State<DenunciasPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Denuncias'),
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.red,
       ),
       body: SingleChildScrollView(
         child: GridView.count(

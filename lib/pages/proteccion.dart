@@ -91,7 +91,7 @@ class _ProteccionPageState extends State<ProteccionPage> {
 
       print('Foto subida exitosamente a Firebase.');
 
-      // Limpiar la vista previa después de subir la foto
+     
       setState(() {
         _takenPhoto = null;
         _isUploading = false;
@@ -99,7 +99,7 @@ class _ProteccionPageState extends State<ProteccionPage> {
     } catch (e) {
       print('Error al subir la foto a Firebase: $e');
 
-      // Manejar el error si la carga falla
+   
       setState(() {
         _isUploading = false;
       });
@@ -226,7 +226,6 @@ class _ProteccionPageState extends State<ProteccionPage> {
     );
 
     if (result != null) {
-      // Aquí puedes manejar el resultado del video grabado
       print('Video grabado en: $result');
     }
   }

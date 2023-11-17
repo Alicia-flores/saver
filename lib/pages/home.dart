@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:saver/pages/acercade.dart';
 import 'package:saver/pages/asistencia.dart';
@@ -5,6 +6,7 @@ import 'package:saver/pages/configuraciones.dart';
 import 'package:saver/pages/denuncia.dart';
 import 'package:saver/pages/mapa.dart';
 import 'package:saver/pages/perfil.dart';
+import 'package:saver/view/login.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -21,8 +23,8 @@ class Home extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   void _signOut(BuildContext context) {
 
-    // FirebaseAuth.instance.signOut();
-    // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
+    FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Login()));
   }
 
   @override
@@ -174,6 +176,7 @@ class MyHomePage extends StatelessWidget {
             ),
           ],
         ),
+        
       ),
       body: SingleChildScrollView(
         child: Padding(
