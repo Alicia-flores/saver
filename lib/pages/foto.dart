@@ -60,3 +60,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 }
               },
+              child: const Text('Tomar foto'),
+            ),
+            currentImage != null
+                ? ElevatedButton(
+                    onPressed: () {
+                      // Aquí puedes agregar la lógica para enviar la foto
+                      // Puedes mostrar un cuadro de diálogo, navegar a otra pantalla, etc.
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Enviar foto'),
+                            content: Text('Añade la lógica de envío aquí'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Cerrar'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                    child: const Text('Enviar'),
+                  )
+                : SizedBox(), // Si no hay imagen, se muestra un contenedor vacío
+          ],
+        ),
+      ),
+    );
+  }
+}
