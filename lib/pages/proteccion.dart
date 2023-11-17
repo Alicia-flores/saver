@@ -21,21 +21,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CruzRojaPage(camera: camera),
+      home: ProteccionPage(camera: camera),
     );
   }
 }
 
-class CruzRojaPage extends StatefulWidget {
+class ProteccionPage extends StatefulWidget {
   final CameraDescription camera;
 
-  CruzRojaPage({required this.camera});
+  ProteccionPage({required this.camera});
 
   @override
-  _CruzRojaPageState createState() => _CruzRojaPageState();
+  _ProteccionPageState createState() => _ProteccionPageState();
 }
 
-class _CruzRojaPageState extends State<CruzRojaPage> {
+class _ProteccionPageState extends State<ProteccionPage> {
   late CameraController _controller;
   late Future<void> _initializeControllerFuture;
   XFile? _takenPhoto;
@@ -110,7 +110,7 @@ class _CruzRojaPageState extends State<CruzRojaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cruz Roja'),
+        title: Text('Proteccion Civil'),
         backgroundColor: Colors.red,
       ),
       body: Container(
@@ -122,7 +122,7 @@ class _CruzRojaPageState extends State<CruzRojaPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  '¡Bienvenido a la Página de Cruz Roja!',
+                  '¡Bienvenido a la Página de Proteccion Civil!',
                   style: TextStyle(fontSize: 20),
                 ),
                 SizedBox(height: 20),
