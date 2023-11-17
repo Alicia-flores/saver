@@ -19,14 +19,24 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.deepOrange,
         colorScheme: ColorScheme.dark(),
       ),
-      home: const MyHomePage(title: 'Camara'),
+      home: const Camara(title: 'Camara'),
       debugShowCheckedModeBanner: false,
       debugShowMaterialGrid: false,
     );
   }
 }
-//este codigo es de la camara
-class _MyHomePageState extends State<MyHomePage> {
+
+// Cambié el nombre de la clase a Camara
+class Camara extends StatefulWidget {
+  const Camara({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _CamaraState createState() => _CamaraState();
+}
+
+class _CamaraState extends State<Camara> {
   List<String> paths = [];
   XFile? currentImage;
 
