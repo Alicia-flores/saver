@@ -76,7 +76,7 @@ class _PoliciaPageState extends State<PoliciaPage> {
 
   Future<void> _uploadPhotoToFirebase() async {
     if (_takenPhoto == null) {
-      print('No se ha tomado ninguna foto.');
+      print('No se ha Tomado ninguna foto.');
       return;
     }
 
