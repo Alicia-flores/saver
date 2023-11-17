@@ -1,8 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:saver/pages/policia.dart';
+import 'package:camera/camera.dart';
 
 
-class DenunciasPage extends StatelessWidget {
+class DenunciasPage extends StatefulWidget {
+  @override
+  _DenunciasPageState createState() => _DenunciasPageState();
+}
+
+class _DenunciasPageState extends State<DenunciasPage> {
+  late List<CameraDescription> cameras;
+  @override
+  void initState() {
+    super.initState();
+    _initializeCameras();
+  }
+
+  Future<void> _initializeCameras() async {
+    try {
+      // Obtén la lista de cámaras disponibles
+      cameras = await availableCameras();
+    } on CameraException catch (e) {
+      print('Error al inicializar las cámaras: $e');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,16 +74,28 @@ class DenunciasPage extends StatelessWidget {
     String route,
   ) {
     return InkWell(
-      onTap: () {
-        if (route == 'police') {
-         Navigator.push(context, MaterialPageRoute(builder: (context) => PoliciaPage()));
-        } else if (route == 'Fuerza Armada') {
-        //Navigator.push(context, MaterialPageRoute(builder: (context) => CruzVerdePage()));
-        } else if (route == 'Fiscalia') {
-         //Navigator.push(context, MaterialPageRoute(builder: (context) => BomberosPage()));
-        } else if (route == 'Procuraduria') {
-          // Navegar a la página de Protección Civil
-        }
+      onTap: ()  {
+        if (route == 'policia' && cameras.isNotEmpty) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => PoliciaPage(camera: cameras.first)),
+          );
+        } /*else if (route == 'cruzVerde' && cameras.isNotEmpty) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CruzVerdePage(camera: cameras.first)),
+          );
+        } else if (route == 'bomberos' && cameras.isNotEmpty) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BomberosPage(camera: cameras.first)),
+          );
+        } else if (route == 'proteccionCivil' && cameras.isNotEmpty) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ProteccionPage(camera: cameras.first)),
+          );
+        }*/
       },
       child: Card(
         elevation: 3,
